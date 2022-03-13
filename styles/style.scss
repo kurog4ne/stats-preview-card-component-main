@@ -1,0 +1,83 @@
+@import '_variables';
+
+*{
+    padding: 0; margin: 0;
+}
+
+main{
+    @include displayflex; 
+    background-color: $mainbg; 
+    height: 100vh;
+    width: 100vw;
+}
+
+h1, h3{
+    @include font1;
+    font-weight: 700;
+    color: $white;
+}
+.card{
+    @include displayflex;
+    width: 55.3rem; 
+    height: 22.4rem; 
+    background-color: $cardbg;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    .cardcontent{
+        box-sizing: border-box;
+        margin-top: 3rem;
+        h1{
+            font-size: 1.7rem;
+            letter-spacing: 1px;
+            padding: 0rem 3.5rem;
+            margin-top: -2.1rem;
+        }
+        strong{
+            color: $accent;
+        }
+        p{
+            font-size: 0.75rem;
+            line-height: 1.6em;
+            padding-top: 1.3rem;
+            padding-bottom: 3rem;
+            padding-left: 3.4rem;
+            margin-right: 7rem;
+            @include font1;
+            color: $mainparagraph
+        }
+    }
+    .cardstats{
+        display: flex;
+        margin-left: 2.5rem;
+        .stat{
+            margin: 1rem;
+        }
+        p{
+            @include font2;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.08rem;
+            margin: 0;
+            padding: 0%;
+        }
+    }
+.imageheader{
+    min-width: 27rem;
+    height: 22.45rem;
+    background-color: hsl(277, 64%, 61%);
+    #imgmobile{
+        display: none;
+    }
+    img{
+        object-fit: cover;
+        mix-blend-mode: multiply;
+        height: 100%;
+        width: 100%;
+        opacity: 0.75;
+        }
+    }
+}
+
+@media only screen and (max-width: 780px) {
+}
