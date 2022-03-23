@@ -11,21 +11,100 @@ body{
 .card{
     @include displayflex;
     @include font1;
-    max-width: 20rem;
+    width: 20rem;
     flex-direction: column-reverse;
     text-align: center;
     overflow: hidden;
     border-radius: 0.4rem;
+    font-size: 15px;
+    .cardcontent{
+        background-color: $cardbg;
+        padding: 1rem 2rem 2rem;
+        h1{
+            font-size: 1.7rem;
+            strong{
+                color: $accent;
+            }
+        }
+        
+        p{
+            color: $mainparagraph;
+            line-height: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat{
+            h3{
+                font-size: 1.5rem;
+                margin-bottom: 0.3rem;
+            }
+            p{
+                @include font2;
+                color: $statsheader;
+                font-size: 14px;
+                text-transform: uppercase;
+                margin: 0;
+            }
+        }
+    }
     .imageheader{
+        width: 20rem;
+        height: 14rem;
         background-color: $accent;
         #imgdesktop{
             display: none;
         }
         #imgmobile{
             width: 100%;
-            object-fit: contain;
+            height: 100%;
             mix-blend-mode: multiply;
             opacity: 0.8;
         }
     }
+}
+
+@media all and(min-width: 768px){
+    // *{
+    //     padding: 0;
+    //     margin: 0;
+    // }
+    body{
+        @include displayflex;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .card{
+        flex-direction: row;
+        width: 69rem;
+        height: 28rem;
+        text-align: left;
+        .cardcontent{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            .cardstats{
+                @include displayflex;
+                justify-content: space-around;
+                flex-direction: row;
+            }
+        }
+        .imageheader{
+            width: 65rem;
+            height: 100%;
+            #imgdesktop{
+                display: inline;
+                width: 100%;
+                height: 100%;
+                mix-blend-mode: multiply;
+                opacity: 0.8;
+            }
+            #imgmobile{
+                display: none;
+            }
+        }
+    }
+  
 }
